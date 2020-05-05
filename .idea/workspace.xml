@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f835a59-d05c-4e9f-babb-4748a32edd62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin/CeramicAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin/CeramicAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ceramic/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ceramic/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ceramic/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ceramic/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ceramic/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ceramic/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/farfor/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/farfor/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/farfor/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/farfor/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guest/guestceramic.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guest/guestceramic.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guest/guestfarfor.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guest/guestfarfor.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guest/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guest/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,8 +160,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Form" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Form" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -176,6 +189,7 @@
       <workItem from="1588225165007" duration="5439000" />
       <workItem from="1588319858352" duration="3556000" />
       <workItem from="1588649537280" duration="895000" />
+      <workItem from="1588656479073" duration="2236000" />
     </task>
     <servers />
   </component>
