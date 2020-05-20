@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Prizn index{% endblock %}
+
+{% block body %}
+    <h1>Prizn index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for prizn in prizns %}
+            <tr>
+                <td>{{ prizn.id }}</td>
+                <td>{{ prizn.name }}</td>
+                <td>
+                    <a href="{{ path('prizn_show', {'id': prizn.id}) }}">show</a>
+                    <a href="{{ path('prizn_edit', {'id': prizn.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('prizn_new') }}">Create new</a>
+{% endblock %}

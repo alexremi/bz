@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ZnPr index{% endblock %}
+
+{% block body %}
+    <h1>ZnPr index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Значение</th>
+                <th>Признак</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for zn_pr in zn_prs %}
+            <tr>
+                <td>{{ zn_pr.id }}</td>
+                <td>{{ zn_pr.name }}</td>
+                <td>{{ zn_pr.pr }}</td>
+                <td>
+                    <a href="{{ path('zn_pr_show', {'id': zn_pr.id}) }}">show</a>
+                    <a href="{{ path('zn_pr_edit', {'id': zn_pr.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('zn_pr_new') }}">Create new</a>
+{% endblock %}

@@ -26,6 +26,16 @@ class FarforController extends AbstractController
     }
 
     /**
+     * @Route("/expert", name="index_expert", methods={"GET"})
+     */
+    public function indexexpert(FarforRepository $farforRepository): Response
+    {
+        return $this->render('farfor/expert.html.twig', [
+            'farfors' => $farforRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/new", name="farfor_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response

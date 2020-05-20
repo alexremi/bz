@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ZnPr{% endblock %}
+
+{% block body %}
+    <h1>Create new ZnPr</h1>
+
+    {{ include('zn_pr/_form.html.twig') }}
+
+    <a href="{{ path('zn_pr_index') }}">back to list</a>
+{% endblock %}

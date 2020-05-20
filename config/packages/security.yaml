@@ -41,5 +41,5 @@ security:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/guest, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/ceramic, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/farfor, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/farfor/expert, roles: ROLE_USER }
         - { path: ^/, roles: ROLE_USER }

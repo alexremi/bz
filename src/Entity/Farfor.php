@@ -32,10 +32,15 @@ class Farfor
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\FarforCategory", inversedBy="category")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToMany(targetEntity="App\Entity\FarforCategory", mappedBy="relation")
      */
-    private $farforCategory;
+    private $farforCategories;
+
+    public function __construct()
+    {
+        $this->farforCategories = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -66,20 +71,40 @@ class Farfor
         return $this;
     }
 
-    public function getFarforCategory(): ?FarforCategory
-    {
-        return $this->farforCategory;
-    }
-
-    public function setFarforCategory(?FarforCategory $farforCategory): self
-    {
-        $this->farforCategory = $farforCategory;
-
-        return $this;
-    }
 
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * @return Collection|FarforCategory[]
+     */
+    public function getFarforCategories(): Collection
+    {
+        return $this->farforCategories;
+    }
+
+    public function addFarforCategory(FarforCategory $farforCategory): self
+    {
+        if (!$this->farforCategories->contains($farforCategory)) {
+            $this->farforCategories[] = $farforCategory;
+            $farforCategory->setRelation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFarforCategory(FarforCategory $farforCategory): self
+    {
+        if ($this->farforCategories->contains($farforCategory)) {
+            $this->farforCategories->removeElement($farforCategory);
+            // set the owning side to null (unless already changed)
+            if ($farforCategory->getRelation() === $this) {
+                $farforCategory->setRelation(null);
+            }
+        }
+
+        return $this;
     }
 }

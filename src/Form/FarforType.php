@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Farfor;
-use App\Entity\FarforCategory;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,7 +18,6 @@ class FarforType extends AbstractType
         $builder
             ->add('name')
             ->add('description')
-            ->add('farforCategory')
         ;
     }
 

@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
 
-        {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href="{{asset('css/s4.css')}}">
-            <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{asset('css/s4.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
 
     <style type="text/css">
-    div{
-        font-family: 'Fjalla One', sans-serif;
-    }
-    li {
-        font-family: 'Fjalla One', sans-serif;
-        background: rgba(0,170,238,0.5);
-    }
-    body{
-        width: 100%;
-        position: relative;
-        background-size: cover;
-        height: auto;
-    }
-</style>
+        div{
+            font-family: 'Fjalla One', sans-serif;
+        }
+        li {
+            font-family: 'Fjalla One', sans-serif;
+            background: rgba(0,170,238,0.5);
+        }
+        body{
+            width: 100%;
+            position: relative;
+            background-size: cover;
+            height: auto;
+        }
+    </style>
 {% endblock %}
 
 {% block javascripts %}
@@ -27,165 +27,39 @@
         new WOW().init();
     </script>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!— Optional JavaScript —>
+    <!— jQuery first, then Popper.js, then Bootstrap JS —>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
-
-<script>
-    otv_uch_3 = document.getElementById('inp_3').value;
-    otv_uch_4 = document.getElementById('inp_4').value;
-    otv_uch_5 = document.getElementById('inp_5').value;
-    otv_uch_6 = document.getElementById('inlineRadio1').value;
-    otv_uch_7 = document.getElementById('inlineRadio2').value;
-    otv_uch_8 = document.getElementById('inlineRadio3').value;
-   // otv_uch_9 = document.getElementsByClassName('heroes').value;
-    let ball3='';
-    let ball1='';
-    let ball2='';
-    let ball4='';
-    //let ball5='';
-
-  function change1() {
-        ball3 = otv_uch_3;
-    }
-  function change2() {
-      ball3 = otv_uch_4;
-  }
-  function change3() {
-      ball3 = otv_uch_5;
-  }
-  function change4() {
-      ball4 = otv_uch_6;
-    }
-  function change5() {
-        ball4 = otv_uch_7;
-    }
-  function change6() {
-        ball4 = otv_uch_8;
-    }
- // function change7() {
-   //     ball5 = otv_uch_9;
-    //}
-
-function proverit() {
-    otv_uch_1 = document.getElementById('inp_1').value;
-    otv_uch_2 = document.getElementById('inp_2').value;
-    if (otv_uch_1 == 'да') {
-        ball1 = 'ВЫ домашняя, ';
-    } else if (otv_uch_1 == 'нет') {
-        ball1 = 'ВЫ уличная, ';
-    }
-
-
-    if (otv_uch_2 == 'да') {
-        ball2 = 'толстая, ';
-    } else if (otv_uch_2 == 'нет') {
-        ball2 = 'худая, ';
-    }
-
-        var procent_vip = ball1;
-        var res = ball2;
-        var tt = ball3;
-        var rt = ball4;
-	var cat = ' кошечка';
-        //var kt = ball5
-    if ((procent_vip!='') && (res!='') && (tt!='') && (rt!='') ) {
-        document.getElementById('rezultat').innerHTML = (procent_vip + res + tt + rt + cat);
-
-    }
-}
-
-
-</script>
-
-{%  endblock %}
-
-{% block content %}
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>{% block title %}WELCOME{% endblock %}</title>
-</head>
-
-        {% block body %}
-<div class="two" >
-
-        <h1>WELCOME</h1></div>
-<br>
-<div class="col-md-12 text-center center-block">
-</div>
-    <div id="content">
-    <!-- CONTENT -->
-</div>
-<!--//-->
-
-<div class="container p-5">
-</div>
-<div class="form-group">
-<label for="inp_1"> <br>Вы любите дом и уют?</br> </label>
-  <input type="text" class="form-control" id="inp_1">
-<label for="inp_2"> <br>Для вас важна еда? </br></label>
-  <input type="text" class="form-control" id="inp_2">
-</div>
-
-<form action="result.php" method="POST">
-<p><b>у вас были кошки?</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_3" value="недружелюбная, " onchange="change1()" >Не было</label>
-<p><label><input type="radio" name="q1" id="inp_4" value="сама по себе, " onchange="change2()"> Было, но мало</label>
-<p><label><input type="radio" name="q1" id="inp_5" value="очень общительная, " onchange="change3()"> Много было</label>
-</p>
-</form>
-
-
-
-
-<form action="option1.php">
-<p><select name="heroes" >
-<option>Любимая порода кошек</option>
-<option  value="Британская кошка" >Британская кошка</option>
-<option  value="Сибирская кошка">Сибирская кошка</option>
-<option  value="Сиамская кошка">Сиамская кошка</option>
-<option  value="Шотландская кошка">Шотландская кошка</option>
-<option  value="Персидская кошка" >Персидская кошка</option>
-   </select>
-<input type="button" value="OK" onClick="dataSelect(this.form)"></p>
-</form> 
-
-
-<div class="form-check form-check-inline">
-<label for="input"> <br>Какая кошка вам нравится больше?</br> </label>
-  <p> <img src="p.jpg" width="200" height="266" alt="lorem">
-  <img src="б.jpg" width="200" height="266" alt="lorem">
-  <img src="ы.jpg" width="200" height="266" alt="lorem"> </p>
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="черная" onchange="change4()">
-  <label class="form-check-label" for="inlineRadio1"  >1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="шоколадная" onchange="change5()">
-  <label class="form-check-label" for="inlineRadio2" >2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="не настоящая" onchange="change6()">
-  <label class="form-check-label" for="inlineRadio3">3</label>
-</div>
-
-
-
-
-
-<button onclick="proverit(); ">узнать результаты</button>
-
-
-<div id="rezultat"></div>
-
-<a href="http://142.93.111.202:8090/farfor/new/"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Добавить к фарфоровым остаткам</button></a>
-<a href="http://142.93.111.202:8090/ceramic/new"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Добавить к керамическим остаткам</button></a>
-<a href="http://142.93.111.202:8090git init/guest"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Просмотр остатков</button></a>
 
 {% endblock %}
+
+{% block content %}
+    <head>
+        <!— Required meta tags —>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>{% block title %}WELCOME{% endblock %}</title>
+    </head>
+
+    {% block body %}
+        <div class="two" >
+
+            <h1>WELCOME</h1></div>
+        <br>
+        <div class="col-md-12 text-center center-block">
+        </div>
+        <div id="content">
+            <!— CONTENT —>
+        </div>
+        <!--//-->
+
+
+        <a href="http://localhost:8090/farfor/expert"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Эксперт</button></a>
+        <a href="http://localhost:8090/guest"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Пользователь</button></a>
+
+    {% endblock %}
 {% endblock %}

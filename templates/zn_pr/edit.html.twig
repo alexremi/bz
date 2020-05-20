@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ZnPr{% endblock %}
+
+{% block body %}
+    <h1>Edit ZnPr</h1>
+
+    {{ include('zn_pr/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('zn_pr_index') }}">back to list</a>
+
+    {{ include('zn_pr/_delete_form.html.twig') }}
+{% endblock %}

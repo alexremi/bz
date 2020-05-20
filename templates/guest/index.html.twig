@@ -1,25 +1,25 @@
 {% extends 'base.html.twig' %}
 
-        {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href="{{asset('css/s4.css')}}">
-            <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{asset('css/s4.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
 
-            <style type="text/css">
-                div{
-                    font-family: 'Fjalla One', sans-serif;
-                }
-                li {
-                    font-family: 'Fjalla One', sans-serif;
-                    background: rgba(0,170,238,0.5);
-                }
-                body{
-                    width: 100%;
-                    position: relative;
-                    background-size: cover;
-                    height: auto;
-                }
-            </style>
-        {% endblock %}
+    <style type="text/css">
+        div{
+            font-family: 'Fjalla One', sans-serif;
+        }
+        li {
+            font-family: 'Fjalla One', sans-serif;
+            background: rgba(0,170,238,0.5);
+        }
+        body{
+            width: 100%;
+            position: relative;
+            background-size: cover;
+            height: auto;
+        }
+    </style>
+{% endblock %}
 
 {% block javascripts %}
     <script src="{{asset('js/wow.min.js')}}"></script>
@@ -27,39 +27,198 @@
         new WOW().init();
     </script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!— Optional JavaScript —>
+    <!— jQuery first, then Popper.js, then Bootstrap JS —>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-{%  endblock %}
+
+    <script>
+        otv_uch_1 = document.getElementById('inp_1').value;
+        otv_uch_2 = document.getElementById('inp_2').value;
+        otv_uch_3 = document.getElementById('inp_3').value;
+        otv_uch_4 = document.getElementById('inp_4').value;
+        otv_uch_5 = document.getElementById('inp_5').value;
+        otv_uch_6 = document.getElementById('inp_6').value;
+        otv_uch_7 = document.getElementById('inp_7').value;
+        otv_uch_8 = document.getElementById('inp_8').value;
+        otv_uch_9 = document.getElementById('inp_9').value;
+        otv_uch_10 = document.getElementById('inp_10').value;
+        otv_uch_11 = document.getElementById('inp_11').value;
+        otv_uch_12 = document.getElementById('inp_12').value;
+        otv_uch_13 = document.getElementById('inp_13').value;
+        otv_uch_14 = document.getElementById('inp_14').value;
+        otv_uch_15 = document.getElementById('inp_15').value;
+
+
+
+        let ball12='';
+        let ball34='';
+        let ball567='';
+        let ball89='';
+        let ball1011='';
+        let ball1213='';
+        let ball1415='';
+
+
+
+        function change1() {
+            ball12 = otv_uch_1;
+        }
+        function change2() {
+            ball12 = otv_uch_2;
+        }
+        function change3() {
+            ball34 = otv_uch_3;
+        }
+        function change4() {
+            ball34 = otv_uch_4;
+        }
+        function change5() {
+            ball567 = otv_uch_5;
+        }
+        function change6() {
+            ball567 = otv_uch_6;
+        }
+        function change7() {
+            ball567 = otv_uch_7;
+        }
+        function change8() {
+            ball89 = otv_uch_8;
+        }
+        function change9() {
+            ball89 = otv_uch_9;
+        }
+        function change10() {
+            ball1011 = otv_uch_10;
+        }
+        function change11() {
+            ball1011 = otv_uch_11;
+        }
+
+        function change12() {
+            ball1213 = otv_uch_12;
+        }
+        function change13() {
+            ball1213 = otv_uch_13;
+        }
+        function change14() {
+            ball1415 = otv_uch_14;
+        }
+        function change15() {
+            ball1415 = otv_uch_15;
+        }
+
+
+
+
+        function proverit() {
+
+
+
+            var t1 = ball12;
+            var t2 = ball34;
+            var t3 = ball567;
+            var t4 = ball89;
+            var t5 = ball1011;
+            var t6 = ball1213;
+            var t7 = ball1415;
+
+
+            var cat = ' - это мы определили ваш класс и подкласс! теперь занесите ваш остаток в базу!';
+
+            if ( (t1!='') && (t2!='') && (t3!='') && (t4!='') && (t5!='') && (t6!='') && (t7!='')) {
+                document.getElementById('rezultat').innerHTML = ( t1 + t2 + t3 + t4 + t5 + t6 + t7 );
+
+            }
+        }
+
+    </script>
+
+{% endblock %}
 
 {% block content %}
     <head>
-        <!-- Required meta tags -->
+        <!— Required meta tags —>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>{% block title %}HELLO, GUEST{% endblock %}</title>
+        <title>{% block title %}WELCOME{% endblock %}</title>
     </head>
 
     {% block body %}
         <div class="two" >
 
-            <h1>HELLO, GUEST</h1></div>
+            <h1>Пользователь</h1></div>
         <br>
         <div class="col-md-12 text-center center-block">
-            <a href="http://142.93.111.202:8090/ceramic/"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Керамические остатки</button></a>
-            <a href="http://142.93.111.202:8090/farfor/"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Фарфоровые остатки</button></a>
-            <a href="http://142.93.111.202:8090/main/"><button type="button" class="btn btn-danger mr-5 btn-lg btn-block">Назад</button></a>
         </div>
         <div id="content">
-            <!-- CONTENT -->
+            <!— CONTENT —>
         </div>
         <!--//-->
 
-        <div class="container p-5">
-        </div>
+
+
+
+        <form action="result.php" method="POST">
+            <p><b>Покрытие глазурью или краской производственным способом</b><br>
+            <p><label for="inp_3"><input type="radio" name="q1" id="inp_1" value="керамика / " onchange="change1()"
+
+                    >да</label>
+            <p><label><input type="radio" name="q1" id="inp_2" value="фарфор / " onchange="change2()"> нет</label>
+            </p>
+        </form>
+
+        <form action="result.php" method="POST">
+            <p><b>Просвечивание</b><br>
+            <p><label for="inp_3"><input type="radio" name="q1" id="inp_3" value="фарфор / " onchange="change3()" >да</label>
+            <p><label><input type="radio" name="q1" id="inp_4" value="керамика / " onchange="change4()"> нет</label>
+            </p>
+        </form>
+
+        <form action="result.php" method="POST">
+            <p><b>Цвет</b><br>
+            <p><label for="inp_3"><input type="radio" name="q1" id="inp_5" value="фарфор / " onchange="change5()" >белый</label>
+            <p><label><input type="radio" name="q1" id="inp_6" value="керамика / " onchange="change6()"> коричневый</label>
+            <p><label><input type="radio" name="q1" id="inp_7" value="керамика(скорее всего гончарная) / " onchange="change7()"> коричневый с красным оттенком</label>
+            </p>
+        </form>
+
+        <form action="result.php" method="POST">
+            <p><b>Хрупкость</b><br>
+            <p><label for="inp_3"><input type="radio" name="q1" id="inp_8" value="фарфор / " onchange="change8()" >да</label>
+            <p><label><input type="radio" name="q1" id="inp_9" value="керамика / " onchange="change9()"> нет</label>
+            </p>
+        </form>
+
+        <form action="result.php" method="POST">
+            <p><b>Температура обжига </b><br>
+            <p><label for="inp_3"><input type="radio" name="q1" id="inp_10" value="твердый фарфор / " onchange="change10()" >1350 - 1400</label>
+            <p><label><input type="radio" name="q1" id="inp_11" value="мягкий фарфор / " onchange="change11()"> менее 1350</label>
+            </p>
+        </form>
+
+        <form action="result.php" method="POST">
+            <p><b>Тип поверхности</b><br>
+            <p><label for="inp_3"><input type="radio" name="q1" id="inp_12" value="твердый бисквитный фарфор / " onchange="change12()" >Ваш остаток имеет шероховатую, матовую поверхность, которая со временем имеет свойство впитывать влагу</label>
+            <p><label><input type="radio" name="q1" id="inp_13" value="твердый фарфор с твердой глазурью /" onchange="change13()"> Ваш остаток имеет гладкую, блестящую поверхность</label>
+            </p>
+        </form>
+
+        <form action="result.php" method="POST">
+            <p><b>Структура</b><br>
+            <p><label for="inp_3"><input type="radio" name="q1" id="inp_14" value="тонкая керамика(может быть фарфором или фаянсом) / " onchange="change14()" >Ваш остаток имеет мелкозернистую структуру, а черепок такой керамики практически прозрачный из-за своей небольшой толщины</label>
+            <p><label><input type="radio" name="q1" id="inp_15" value="грубая керамика / " onchange="change15()"> Ваш остаток имеет крупнозернистую структуру, похож на гончарное изделие</label>
+            </p>
+        </form>
+
+        <button onclick="proverit(); ">узнать результаты</button>
+
+        <div id="rezultat"></div>
+
+
+        <a href="http://localhost:8090/main"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">На главную</button></a>
 
     {% endblock %}
 {% endblock %}

@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\FarforCategoryRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ZnPrRepository")
  */
-class FarforCategory
+class ZnPr
 {
     /**
      * @ORM\Id()
@@ -17,14 +17,14 @@ class FarforCategory
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Farfor", inversedBy="farforCategories")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Prizn", inversedBy="znPrs")
      */
-    private $relation;
+    private $pr;
 
     public function getId(): ?int
     {
@@ -36,22 +36,26 @@ class FarforCategory
         return $this->name;
     }
 
-    public function setName(?string $name): self
+    public function setName(string $name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function getRelation(): ?Farfor
+    public function getPr(): ?Prizn
     {
-        return $this->relation;
+        return $this->pr;
     }
 
-    public function setRelation(?Farfor $relation): self
+    public function setPr(?Prizn $pr): self
     {
-        $this->relation = $relation;
+        $this->pr = $pr;
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->getName();
     }
 }

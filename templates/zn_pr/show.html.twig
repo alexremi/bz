@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ZnPr{% endblock %}
+
+{% block body %}
+    <h1>ZnPr</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ zn_pr.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ zn_pr.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('zn_pr_index') }}">back to list</a>
+
+    <a href="{{ path('zn_pr_edit', {'id': zn_pr.id}) }}">edit</a>
+
+    {{ include('zn_pr/_delete_form.html.twig') }}
+{% endblock %}

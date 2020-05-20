@@ -19,7 +19,6 @@
             <tr>
                 <td>{{ ceramic.id }}</td>
                 <td>{{ ceramic.name }}</td>
-                <td>{{ ceramic.description }}</td>
                 <td>
                     <a href="{{ path('ceramic_show', {'id': ceramic.id}) }}">show</a>
                     <a href="{{ path('ceramic_edit', {'id': ceramic.id}) }}">edit</a>
@@ -33,5 +32,5 @@
         </tbody>
     </table>
 
-    <a href="http://142.93.111.202:8090/main/"><button type="button" class="btn btn-danger mr-5 btn-lg btn-block">На главную</button></a>
+    <a href="http://localhost:8090/main/"><button type="button" class="btn btn-danger mr-5 btn-lg btn-block">На главную</button></a>
 {% endblock %}

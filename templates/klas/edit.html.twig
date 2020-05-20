@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Klas{% endblock %}
+
+{% block body %}
+    <h1>Edit Klas</h1>
+
+    {{ include('klas/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('klas_index') }}">back to list</a>
+
+    {{ include('klas/_delete_form.html.twig') }}
+{% endblock %}
