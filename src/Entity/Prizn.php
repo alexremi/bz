@@ -28,9 +28,15 @@ class Prizn
      */
     private $znPrs;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\KlPr", mappedBy="Pr")
+     */
+    private $klPrs;
+
     public function __construct()
     {
         $this->znPrs = new ArrayCollection();
+        $this->klPrs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -83,5 +89,36 @@ class Prizn
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * @return Collection|KlPr[]
+     */
+    public function getKlPrs(): Collection
+    {
+        return $this->klPrs;
+    }
+
+    public function addKlPr(KlPr $klPr): self
+    {
+        if (!$this->klPrs->contains($klPr)) {
+            $this->klPrs[] = $klPr;
+            $klPr->setPr($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKlPr(KlPr $klPr): self
+    {
+        if ($this->klPrs->contains($klPr)) {
+            $this->klPrs->removeElement($klPr);
+            // set the owning side to null (unless already changed)
+            if ($klPr->getPr() === $this) {
+                $klPr->setPr(null);
+            }
+        }
+
+        return $this;
     }
 }

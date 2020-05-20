@@ -57,38 +57,11 @@
         </div>
         <!--//-->
 
-        <h1>Знания</h1>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for farfor in farfors %}
-                <tr>
-                    <td>{{ farfor.id }}</td>
-                    <td>{{ farfor.name }}</td>
-                    <td>{{ farfor.description }}</td>
-                    <td>
-                        <a href="{{ path('farfor_show', {'id': farfor.id}) }}">show</a>
-                        <a href="{{ path('farfor_edit', {'id': farfor.id}) }}">edit</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="4">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-
-
-        <a href="{{ path('farfor_new') }}">Create new</a>
+        <a href="http://localhost:8090/klas/"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Классы</button></a>
+        <a href="http://localhost:8090/prizn/"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Признаки</button></a>
+        <a href="http://localhost:8090/kl/pr/"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Признаки для классов</button></a>
+        <a href="http://localhost:8090/zn/pr"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">Значения для признаков</button></a>
 
         <a href="http://localhost:8090/main/"><button type="button" class="btn btn-danger mr-5 btn-lg btn-block">На главную</button></a>
 

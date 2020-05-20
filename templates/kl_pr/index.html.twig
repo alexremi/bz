@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}KlPr index{% endblock %}
+
+{% block body %}
+    <h1>KlPr index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Класс</th>
+                <th>Признак</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for kl_pr in kl_prs %}
+            <tr>
+                <td>{{ kl_pr.id }}</td>
+                <td>{{ kl_pr.kl }}</td>
+                <td>{{ kl_pr.Pr }}</td>
+
+                <td>
+                    <a href="{{ path('kl_pr_show', {'id': kl_pr.id}) }}">show</a>
+                    <a href="{{ path('kl_pr_edit', {'id': kl_pr.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('kl_pr_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New KlPr{% endblock %}
+
+{% block body %}
+    <h1>Create new KlPr</h1>
+
+    {{ include('kl_pr/_form.html.twig') }}
+
+    <a href="{{ path('kl_pr_index') }}">back to list</a>
+{% endblock %}

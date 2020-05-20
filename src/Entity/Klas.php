@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,6 +22,16 @@ class Klas
      * @ORM\Column(type="string", length=255)
      */
     private $name;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\KlPr", mappedBy="kl")
+     */
+    private $klPrs;
+
+    public function __construct()
+    {
+        $this->klPrs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -40,5 +52,36 @@ class Klas
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * @return Collection|KlPr[]
+     */
+    public function getKlPrs(): Collection
+    {
+        return $this->klPrs;
+    }
+
+    public function addKlPr(KlPr $klPr): self
+    {
+        if (!$this->klPrs->contains($klPr)) {
+            $this->klPrs[] = $klPr;
+            $klPr->setKl($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKlPr(KlPr $klPr): self
+    {
+        if ($this->klPrs->contains($klPr)) {
+            $this->klPrs->removeElement($klPr);
+            // set the owning side to null (unless already changed)
+            if ($klPr->getKl() === $this) {
+                $klPr->setKl(null);
+            }
+        }
+
+        return $this;
     }
 }
