@@ -3,9 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="4f835a59-d05c-4e9f-babb-4748a32edd62" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Klas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Klas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Prizn.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Prizn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/farfor/expert.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/farfor/expert.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guest/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guest/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/kl_pr/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kl_pr/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/kl_pr/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kl_pr/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/kl_pr/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kl_pr/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/kl_pr/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kl_pr/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/klas/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/klas/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/klas/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/klas/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/klas/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/klas/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/klas/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/klas/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/prizn/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/prizn/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/prizn/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/prizn/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/prizn/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/prizn/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/prizn/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/prizn/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/zn_pr/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/zn_pr/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/zn_pr/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/zn_pr/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/zn_pr/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/zn_pr/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/zn_pr/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/zn_pr/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +216,9 @@
       <workItem from="1589868256073" duration="2262000" />
       <workItem from="1589952224074" duration="3129000" />
       <workItem from="1589956096538" duration="1832000" />
+      <workItem from="1589984657228" duration="1701000" />
+      <workItem from="1590023154698" duration="697000" />
+      <workItem from="1590477834703" duration="648000" />
     </task>
     <servers />
   </component>
