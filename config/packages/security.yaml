@@ -23,7 +23,7 @@ security:
 
             logout:
                 path: /logout
-                target: http://localhost:8098/main
+                target: /main
 
             # activate different ways to authenticate
 
@@ -36,10 +36,13 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/admin, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/user, roles: ROLE_ADMIN }
         - { path: ^/main, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/guest, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/guest, roles: ROLE_USER }
+        - { path: ^artefacts, roles: ROLE_USER }
         - { path: ^/ceramic, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/farfor/expert, roles: ROLE_USER }
+        - { path: ^/farfor/expert, roles: ROLE_ADMIN }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY}
         - { path: ^/, roles: ROLE_USER }

@@ -1,0 +1,21 @@
+<header class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Пользователь</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/main">Вернуться на главную <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <div class="btn-group">
+            <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAABlklEQVRIid2VPS9EQRiFz6isrXw1Ch/LP9hEtb4K8XMQtiDxO9CIXVpR+QM0ohQREgW17yAskkdxp5hc8969S8Vpbu57z5kz78yZudJ/gctDAgqSJiT1S+qUdC/pStK+c+71VzMARoBt4IU4XoAtYPinBlXg3Rg8jQaw2KrBes7B01hrpQMLF8AecJ3BWWhmMIK9RNWA1wfsGLwGUMoy2TaEx4BLcZ2vx1C3DArYKdo0NBsG/5kk9pKktkAzLqnDaLLbqPca9aKkSsxkwBBIUqPFuiQNxkys2UrSJDAUFvz7VIamJ2ZymyHolrSSqq1I6srQ3HyrADPGJoYoem4xB3c6ZlLwqbCwi48xSXx3M7hPQHu0P5LLLsQDsAREQwEMAMvAY0pXMxcRGCY5sQAfQDljzUPdKPDpdW+kQhITLHryGcGBaqLpAM69bj6PRsCaF5wAlSbcceDU81dzGQTihWDpDoFZYBIo++cccOS/N3J3EDEqAXXs1D0DtWZ7kPcf3y5pTMlV0SXpTtKlpAPn3NuPOviT+AL30y/hoozG6AAAAABJRU5ErkJggg==">
+            </div>
+            <div class="dropdown-menu dropdown-menu-right">
+                <h5 class="dropdown-header">{{ app.user.username }}</h5>
+                <button class="dropdown-item" type="button">Редактировать профиль</button>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/logout">Выйти</a>
+            </div>
+        </div>
+    </div>
+</header>

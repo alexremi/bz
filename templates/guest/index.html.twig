@@ -1,316 +1,295 @@
 ﻿{% extends 'base.html.twig' %}
+{% block title %}Manage Account!{% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{{asset('css/s4.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
-
-<style type="text/css">
-div{
-font-family: 'Fjalla One', sans-serif;
-}
-li {
-font-family: 'Fjalla One', sans-serif;
-background: rgba(0,170,238,0.5);
-}
-body{
-width: 100%;
-position: relative;
-background-size: cover;
-height: auto;
-}
-</style>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/s4.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
 {% endblock %}
 
 {% block javascripts %}
-<script src="{{asset('js/wow.min.js')}}"></script>
-<script>
-new WOW().init();
-</script>
+    <script src="{{asset('js/wow.min.js')}}"></script>
+    <script>
+        new WOW().init();
+    </script>
 
-<!— Optional JavaScript —>
-<!— jQuery first, then Popper.js, then Bootstrap JS —>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script>
+        otv_uch_1 = document.getElementById('inp_1').value;
+        otv_uch_2 = document.getElementById('inp_2').value;
+        otv_uch_3 = document.getElementById('inp_3').value;
+        otv_uch_4 = document.getElementById('inp_4').value;
+        otv_uch_5 = document.getElementById('inp_5').value;
+        otv_uch_6 = document.getElementById('inp_6').value;
+        otv_uch_7 = document.getElementById('inp_7').value;
+        otv_uch_8 = document.getElementById('inp_8').value;
+        otv_uch_9 = document.getElementById('inp_9').value;
+        otv_uch_10 = document.getElementById('inp_10').value;
+        otv_uch_11 = document.getElementById('inp_11').value;
+        otv_uch_12 = document.getElementById('inp_12').value;
+        otv_uch_13 = document.getElementById('inp_13').value;
+        otv_uch_14 = document.getElementById('inp_14').value;
+        otv_uch_15 = document.getElementById('inp_15').value;
+        otv_uch_16 = document.getElementById('inp_16').value;
+        otv_uch_17 = document.getElementById('inp_17').value;
+        otv_uch_18 = document.getElementById('inp_18').value;
+        otv_uch_19 = document.getElementById('inp_19').value;
+        otv_uch_20 = document.getElementById('inp_20').value;
+        otv_uch_21 = document.getElementById('inp_21').value;
+        otv_uch_22 = document.getElementById('inp_22').value;
+        otv_uch_23 = document.getElementById('inp_23').value;
+        otv_uch_24 = document.getElementById('inp_24').value;
+        otv_uch_25 = document.getElementById('inp_25').value;
+        otv_uch_26 = document.getElementById('inp_26').value;
+        otv_uch_27 = document.getElementById('inp_27').value;
+        otv_uch_28 = document.getElementById('inp_28').value;
+        otv_uch_29 = document.getElementById('inp_29').value;
 
-<script>
-otv_uch_1 = document.getElementById('inp_1').value;
-otv_uch_2 = document.getElementById('inp_2').value;
-otv_uch_3 = document.getElementById('inp_3').value;
-otv_uch_4 = document.getElementById('inp_4').value;
-otv_uch_5 = document.getElementById('inp_5').value;
-otv_uch_6 = document.getElementById('inp_6').value;
-otv_uch_7 = document.getElementById('inp_7').value;
-otv_uch_8 = document.getElementById('inp_8').value;
-otv_uch_9 = document.getElementById('inp_9').value;
-otv_uch_10 = document.getElementById('inp_10').value;
-otv_uch_11 = document.getElementById('inp_11').value;
-otv_uch_12 = document.getElementById('inp_12').value;
-otv_uch_13 = document.getElementById('inp_13').value;
-otv_uch_14 = document.getElementById('inp_14').value;
-otv_uch_15 = document.getElementById('inp_15').value;
-otv_uch_16 = document.getElementById('inp_16').value;
-otv_uch_17 = document.getElementById('inp_17').value;
-otv_uch_18 = document.getElementById('inp_18').value;
-otv_uch_19 = document.getElementById('inp_19').value;
-otv_uch_20 = document.getElementById('inp_20').value;
-otv_uch_21 = document.getElementById('inp_21').value;
-otv_uch_22 = document.getElementById('inp_22').value;
-otv_uch_23 = document.getElementById('inp_23').value;
-otv_uch_24 = document.getElementById('inp_24').value;
-otv_uch_25 = document.getElementById('inp_25').value;
-otv_uch_26 = document.getElementById('inp_26').value;
-otv_uch_27 = document.getElementById('inp_27').value;
-otv_uch_28 = document.getElementById('inp_28').value;
-otv_uch_29 = document.getElementById('inp_29').value;
+        let ball12='';
+        let ball34='';
+        let ball567='';
+        let ball89='';
+        let ball1011='';
+        let ball1213='';
+        let ball1415='';
+        let ball1617='';
+        let ball1823='';
+        let ball2425='';
+        let ball2629='';
 
-let ball12='';
-let ball34='';
-let ball567='';
-let ball89='';
-let ball1011='';
-let ball1213='';
-let ball1415='';
-let ball1617='';
-let ball1823='';
-let ball2425='';
-let ball2629='';
+        function change1() {
+            ball12 = otv_uch_1;
+        }
+        function change2() {
+            ball12 = otv_uch_2;
+        }
+        function change3() {
+            ball34 = otv_uch_3;
+        }
+        function change4() {
+            ball34 = otv_uch_4;
+        }
+        function change5() {
+            ball567 = otv_uch_5;
+        }
+        function change6() {
+            ball567 = otv_uch_6;
+        }
+        function change7() {
+            ball567 = otv_uch_7;
+        }
+        function change8() {
+            ball89 = otv_uch_8;
+        }
+        function change9() {
+            ball89 = otv_uch_9;
+        }
+        function change10() {
+            ball1011 = otv_uch_10;
+        }
+        function change11() {
+            ball1011 = otv_uch_11;
+        }
 
-function change1() {
-ball12 = otv_uch_1;
-}
-function change2() {
-ball12 = otv_uch_2;
-}
-function change3() {
-ball34 = otv_uch_3;
-}
-function change4() {
-ball34 = otv_uch_4;
-}
-function change5() {
-ball567 = otv_uch_5;
-}
-function change6() {
-ball567 = otv_uch_6;
-}
-function change7() {
-ball567 = otv_uch_7;
-}
-function change8() {
-ball89 = otv_uch_8;
-}
-function change9() {
-ball89 = otv_uch_9;
-}
-function change10() {
-ball1011 = otv_uch_10;
-}
-function change11() {
-ball1011 = otv_uch_11;
-}
-
-function change12() {
-ball1213 = otv_uch_12;
-}
-function change13() {
-ball1213 = otv_uch_13;
-}
-function change14() {
-ball1415 = otv_uch_14;
-}
-function change15() {
-ball1415 = otv_uch_15;
-}
-function change16() {
-ball1617 = otv_uch_16;
-}
-function change17() {
-ball1617 = otv_uch_17;
-}
-function change18() {
-ball1823 = otv_uch_18;
-}
-function change19() {
-ball1823 = otv_uch_19;
-}
-function change20() {
-ball1823 = otv_uch_20;
-}
-function change21() {
-ball1823 = otv_uch_21;
-}
-function change22() {
-ball1823 = otv_uch_22;
-}
-function change23() {
-ball1823 = otv_uch_23;
-}
-function change24() {
-ball2425 = otv_uch_24;
-}
-function change25() {
-ball2425 = otv_uch_25;
-}
-function change26() {
-ball2629 = otv_uch_26;
-}
-function change27() {
-ball2629 = otv_uch_27;
-}
-function change28() {
-ball2629 = otv_uch_28;
-}
-function change29() {
-ball2629 = otv_uch_29;
-}
+        function change12() {
+            ball1213 = otv_uch_12;
+        }
+        function change13() {
+            ball1213 = otv_uch_13;
+        }
+        function change14() {
+            ball1415 = otv_uch_14;
+        }
+        function change15() {
+            ball1415 = otv_uch_15;
+        }
+        function change16() {
+            ball1617 = otv_uch_16;
+        }
+        function change17() {
+            ball1617 = otv_uch_17;
+        }
+        function change18() {
+            ball1823 = otv_uch_18;
+        }
+        function change19() {
+            ball1823 = otv_uch_19;
+        }
+        function change20() {
+            ball1823 = otv_uch_20;
+        }
+        function change21() {
+            ball1823 = otv_uch_21;
+        }
+        function change22() {
+            ball1823 = otv_uch_22;
+        }
+        function change23() {
+            ball1823 = otv_uch_23;
+        }
+        function change24() {
+            ball2425 = otv_uch_24;
+        }
+        function change25() {
+            ball2425 = otv_uch_25;
+        }
+        function change26() {
+            ball2629 = otv_uch_26;
+        }
+        function change27() {
+            ball2629 = otv_uch_27;
+        }
+        function change28() {
+            ball2629 = otv_uch_28;
+        }
+        function change29() {
+            ball2629 = otv_uch_29;
+        }
 
 
-function proverit() {
+        function proverit() {
 
-var t1 = ball12;
-var t2 = ball34;
-var t3 = ball567;
-var t4 = ball89;
-var t5 = ball1011;
-var t6 = ball1213;
-var t7 = ball1415;
-var t8 = ball1617;
-var t9 = ball1823;
-var t10 = ball2425;
-var t11 = ball2629;
+            var t1 = ball12;
+            var t2 = ball34;
+            var t3 = ball567;
+            var t4 = ball89;
+            var t5 = ball1011;
+            var t6 = ball1213;
+            var t7 = ball1415;
+            var t8 = ball1617;
+            var t9 = ball1823;
+            var t10 = ball2425;
+            var t11 = ball2629;
 
-var cat = ' - это мы определили ваш класс и подкласс! теперь занесите ваш остаток в базу!';
+            var cat = ' - это мы определили ваш класс и подкласс! теперь занесите ваш остаток в базу!';
 
-if ( (t1!='') || (t2!='') || (t3!='') || (t4!='') || (t5!='') || (t6!='') || (t7!='')|| (t8!='') || (t9!='') || (t10!='') || (t11!='')) {
-document.getElementById('rezultat').innerHTML = ( t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 + t9 + t10 + t11);
+            if ( (t1!='') || (t2!='') || (t3!='') || (t4!='') || (t5!='') || (t6!='') || (t7!='')|| (t8!='') || (t9!='') || (t10!='') || (t11!='')) {
+                document.getElementById('rezultat').innerHTML = ( t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 + t9 + t10 + t11);
 
-}
-}
+            }
+        }
 
-</script>
+    </script>
 
 {% endblock %}
-
-{% block content %}
-<head>
-<!— Required meta tags —>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<title>{% block title %}WELCOME{% endblock %}</title>
-</head>
 
 {% block body %}
-<div class="two" >
+    {{ include('header.html.twig') }}
 
-<h1>Пользователь</h1></div>
-<br>
-<div class="col-md-12 text-center center-block">
-</div>
-<div id="content">
-<!— CONTENT —>
-</div>
-<!--//-->
+    <main class="container-fluid">
+        <div class="row">
+            <aside class="col-md-3 col-lg-2 bg-white pt-3">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/artefacts">Мои артефакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Классифицировать артефакт</a>
+                    </li>
 
-<form action="result.php" method="POST">
-<p><b>Покрытие глазурью или краской производственным способом</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_1" value="керамика / " onchange="change1()">да</label>
-<p><label><input type="radio" name="q1" id="inp_2" value="фарфор / " onchange="change2()"> нет</label>
-</p>
-</form>
+                </ul>
+            </aside>
+            <section class="col-md-9 col-lg-10 p-3" role="main">
+                <div class="two" >
 
-<form action="result.php" method="POST">
-<p><b>Просвечивание</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_3" value="фарфор / " onchange="change3()" >да</label>
-<p><label><input type="radio" name="q1" id="inp_4" value="керамика / " onchange="change4()"> нет</label>
-</p>
-</form>
+                    <h1>Пользователь</h1></div>
 
-<form action="result.php" method="POST">
-<p><b>Цвет</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_5" value="фарфор / " onchange="change5()" >белый</label>
-<p><label><input type="radio" name="q1" id="inp_6" value="керамика / " onchange="change6()"> коричневый</label>
-<p><label><input type="radio" name="q1" id="inp_7" value="керамика(скорее всего гончарная) / " onchange="change7()"> коричневый с красным оттенком</label>
-</p>
-</form>
+                <form action="result.php" method="POST">
+                    <p><b>Покрытие глазурью или краской производственным способом</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_1" value="керамика / " onchange="change1()">да</label>
+                    <p><label><input type="radio" name="q1" id="inp_2" value="фарфор / " onchange="change2()"> нет</label>
+                    </p>
+                </form>
 
-<form action="result.php" method="POST">
-<p><b>Хрупкость</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_8" value="фарфор / " onchange="change8()" >да</label>
-<p><label><input type="radio" name="q1" id="inp_9" value="керамика / " onchange="change9()"> нет</label>
-</p>
-</form>
+                <form action="result.php" method="POST">
+                    <p><b>Просвечивание</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_3" value="фарфор / " onchange="change3()" >да</label>
+                    <p><label><input type="radio" name="q1" id="inp_4" value="керамика / " onchange="change4()"> нет</label>
+                    </p>
+                </form>
 
-<form action="result.php" method="POST">
-<p><b>Температура обжига </b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_10" value="твердый фарфор / " onchange="change10()" >1350 - 1400</label>
-<p><label><input type="radio" name="q1" id="inp_11" value="мягкий фарфор / " onchange="change11()"> менее 1350</label>
-</p>
-</form>
+                <form action="result.php" method="POST">
+                    <p><b>Цвет</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_5" value="фарфор / " onchange="change5()" >белый</label>
+                    <p><label><input type="radio" name="q1" id="inp_6" value="керамика / " onchange="change6()"> коричневый</label>
+                    <p><label><input type="radio" name="q1" id="inp_7" value="керамика(скорее всего гончарная) / " onchange="change7()"> коричневый с красным оттенком</label>
+                    </p>
+                </form>
 
-<form action="result.php" method="POST">
-<p><b>Тип поверхности</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_12" value="твердый бисквитный фарфор / " onchange="change12()" >Ваш остаток имеет шероховатую, матовую поверхность, которая со временем имеет свойство впитывать влагу</label>
-<p><label><input type="radio" name="q1" id="inp_13" value="твердый фарфор с твердой глазурью /" onchange="change13()"> Ваш остаток имеет гладкую, блестящую поверхность</label>
-</p>
-</form>
+                <form action="result.php" method="POST">
+                    <p><b>Хрупкость</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_8" value="фарфор / " onchange="change8()" >да</label>
+                    <p><label><input type="radio" name="q1" id="inp_9" value="керамика / " onchange="change9()"> нет</label>
+                    </p>
+                </form>
 
-<form action="result.php" method="POST">
-<p><b>Структура</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_14" value="тонкая керамика(может быть фарфором или фаянсом) / " onchange="change14()" >Ваш остаток имеет мелкозернистую структуру, а черепок такой керамики практически прозрачный из-за своей небольшой толщины</label>
-<p><label><input type="radio" name="q1" id="inp_15" value="грубая керамика / " onchange="change15()"> Ваш остаток имеет крупнозернистую структуру, похож на гончарное изделие</label>
-</p>
-</form>
+                <form action="result.php" method="POST">
+                    <p><b>Температура обжига </b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_10" value="твердый фарфор / " onchange="change10()" >1350 - 1400</label>
+                    <p><label><input type="radio" name="q1" id="inp_11" value="мягкий фарфор / " onchange="change11()"> менее 1350</label>
+                    </p>
+                </form>
 
-<form action="result.php" method="POST">
-<p><b>Есть ли на вашем артефакте стекловидное покрытие?</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_16" value="керамика, покрытая глазурью / " onchange="change16()" >да</label>
-<p><label><input type="radio" name="q1" id="inp_17" value="нет следов глазури / " onchange="change17()"> нет</label>
-</p>
-</form>
+                <form action="result.php" method="POST">
+                    <p><b>Тип поверхности</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_12" value="твердый бисквитный фарфор / " onchange="change12()" >Ваш остаток имеет шероховатую, матовую поверхность, которая со временем имеет свойство впитывать влагу</label>
+                    <p><label><input type="radio" name="q1" id="inp_13" value="твердый фарфор с твердой глазурью /" onchange="change13()"> Ваш остаток имеет гладкую, блестящую поверхность</label>
+                    </p>
+                </form>
 
-<form action="result.php" method="POST">
-<p><b>На что похож ваш артефакт?</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_18" value="древнейшая керамика Японских островов(Восточноазиатский район) / " onchange="change18()" >Сосуды с округлым, или чуть заостренным, или (редко) плоским дном, прямыми или слегка расширяющимися к открытому устью стенками имели очертания, близкие к конусу.</label>
-<p><label><input type="radio" name="q1" id="inp_19" value="древняя керамика южного Китая(Восточноазиатский район) / " onchange="change19()">Емкости со слегка выпуклыми стенками, широким устьем и округлым дном.</label>
-<p><label><input type="radio" name="q1" id="inp_20" value="керамика зададного Приморья(Восточноазиатский район) / " onchange="change20()">Присутствие следов растительной (травянистой) примеси в составе формовочной массы,неравномерная толщина стенок, низкотемпературный обжиг, наличие емкостей с плоским дном.</label>
-<p><label><input type="radio" name="q1" id="inp_21" value="керамика северного Китая(Восточноазиатский район)/ " onchange="change21()">Плоское широкое дно и прямые стенки, хотя на некоторых памятниках обнаружены сосуды с круглым дном.</label>
-<p><label><input type="radio" name="q1" id="inp_22" value="керамика района Западной Азии/ " onchange="change22()">Сосуды(миски, чаши, горшки, крупные тарные контейнеры) из пластичных «жирных» глин. Есть добавка ввиде резанаой соломы,песока и дробленой раковины.</label>
-<p><label><input type="radio" name="q1" id="inp_23" value="керамика Сахары и долины Нила(Североафриканский район )/ " onchange="change23()">Сосуды простых форм с круглым дном, на сосуде есть фрагмент гребенчатого орнамента.</label>
-</p>
-</form>
+                <form action="result.php" method="POST">
+                    <p><b>Структура</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_14" value="тонкая керамика(может быть фарфором или фаянсом) / " onchange="change14()" >Ваш остаток имеет мелкозернистую структуру, а черепок такой керамики практически прозрачный из-за своей небольшой толщины</label>
+                    <p><label><input type="radio" name="q1" id="inp_15" value="грубая керамика / " onchange="change15()"> Ваш остаток имеет крупнозернистую структуру, похож на гончарное изделие</label>
+                    </p>
+                </form>
 
-<form action="result.php" method="POST">
-<p><b>Водопоглащение.</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_24" value="Класс пористых, частично спекшихся изделий с водовопоглощением до 15% / " onchange="change24()" >до 15%</label>
-<p><label><input type="radio" name="q1" id="inp_25" value="Класс полностью спекшихся, блестящих в изломе изделий с водопоглощением не выше 0,5% / " onchange="change25()">не выше 0,5%</label>
-</p>
-</form>
+                <form action="result.php" method="POST">
+                    <p><b>Есть ли на вашем артефакте стекловидное покрытие?</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_16" value="керамика, покрытая глазурью / " onchange="change16()" >да</label>
+                    <p><label><input type="radio" name="q1" id="inp_17" value="нет следов глазури / " onchange="change17()"> нет</label>
+                    </p>
+                </form>
 
-<form action="result.php" method="POST">
-<p><b>Если вы выбрали класс пористых, частично спекшихся изделий с водовопоглощением до 15%. Выбирите описание артефакта.</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_26" value="Строительная керамика(грубозернистая) / " onchange="change26()" >Глиняный кирпич и пустотелые блоки.</label>
-<p><label><input type="radio" name="q1" id="inp_27" value="Санитарно-технические изделия(Фаянс, полуфарфор) / " onchange="change27()">Оборудование санитарных узлов.</label>
-<p><label><input type="radio" name="q1" id="inp_28" value="Бытовая и художественно-декоративная керамика(Фаянс, полуфарфор, майолика) / " onchange="change28()">Столовая и чайная посуда, художественно-декоративные изделия.</label>
-<p><label><input type="radio" name="q1" id="inp_29" value="Огнеупорная керамика(Алюмосиликатная, кремнеземистая, магнезиальная, хромистая) / " onchange="change29()">Кирпичи и блоки, применяемые при сооружении печей, топок.</label>
-</p>
-</form>
+                <form action="result.php" method="POST">
+                    <p><b>На что похож ваш артефакт?</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_18" value="древнейшая керамика Японских островов(Восточноазиатский район) / " onchange="change18()" >Сосуды с округлым, или чуть заостренным, или (редко) плоским дном, прямыми или слегка расширяющимися к открытому устью стенками имели очертания, близкие к конусу.</label>
+                    <p><label><input type="radio" name="q1" id="inp_19" value="древняя керамика южного Китая(Восточноазиатский район) / " onchange="change19()">Емкости со слегка выпуклыми стенками, широким устьем и округлым дном.</label>
+                    <p><label><input type="radio" name="q1" id="inp_20" value="керамика зададного Приморья(Восточноазиатский район) / " onchange="change20()">Присутствие следов растительной (травянистой) примеси в составе формовочной массы,неравномерная толщина стенок, низкотемпературный обжиг, наличие емкостей с плоским дном.</label>
+                    <p><label><input type="radio" name="q1" id="inp_21" value="керамика северного Китая(Восточноазиатский район)/ " onchange="change21()">Плоское широкое дно и прямые стенки, хотя на некоторых памятниках обнаружены сосуды с круглым дном.</label>
+                    <p><label><input type="radio" name="q1" id="inp_22" value="керамика района Западной Азии/ " onchange="change22()">Сосуды(миски, чаши, горшки, крупные тарные контейнеры) из пластичных «жирных» глин. Есть добавка ввиде резанаой соломы,песока и дробленой раковины.</label>
+                    <p><label><input type="radio" name="q1" id="inp_23" value="керамика Сахары и долины Нила(Североафриканский район )/ " onchange="change23()">Сосуды простых форм с круглым дном, на сосуде есть фрагмент гребенчатого орнамента.</label>
+                    </p>
+                </form>
 
-<form action="result.php" method="POST">
-<p><b>Если вы выбрали класс полностью спекшихся, блестящих в изломе изделий с водопоглощением не выше 0,5%. Выбирите описание артефакта.</b><br>
-<p><label for="inp_3"><input type="radio" name="q1" id="inp_30" value="Техническая керамика / " onchange="change30()" >Изоляторы, чехлы для термопар, вакуумплотные колбы.</label>
-<p><label><input type="radio" name="q1" id="inp_31" value="Кислотоупорная(«Каменная», кислотоупорный фарфор) / " onchange="change31()">Сосуды для хранения кислот и щелочей.</label>
-<p><label><input type="radio" name="q1" id="inp_32" value="Бытовая и художественно-декоративная керамика(Твердый и мягкий хозяйственный фарфор) / " onchange="change32()">Столовая и чайная посуда, статуэтки, вазы.</label>
-<p><label><input type="radio" name="q1" id="inp_33" value="Санитарно-строительные изделия(Низкотемператур­ный фарфор) / " onchange="change33()">Умывальные столы, унитазы.</label>
-</p>
-</form>
+                <form action="result.php" method="POST">
+                    <p><b>Водопоглащение.</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_24" value="Класс пористых, частично спекшихся изделий с водовопоглощением до 15% / " onchange="change24()" >до 15%</label>
+                    <p><label><input type="radio" name="q1" id="inp_25" value="Класс полностью спекшихся, блестящих в изломе изделий с водопоглощением не выше 0,5% / " onchange="change25()">не выше 0,5%</label>
+                    </p>
+                </form>
 
-<button onclick="proverit(); ">узнать результаты</button>
+                <form action="result.php" method="POST">
+                    <p><b>Если вы выбрали класс пористых, частично спекшихся изделий с водовопоглощением до 15%. Выбирите описание артефакта.</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_26" value="Строительная керамика(грубозернистая) / " onchange="change26()" >Глиняный кирпич и пустотелые блоки.</label>
+                    <p><label><input type="radio" name="q1" id="inp_27" value="Санитарно-технические изделия(Фаянс, полуфарфор) / " onchange="change27()">Оборудование санитарных узлов.</label>
+                    <p><label><input type="radio" name="q1" id="inp_28" value="Бытовая и художественно-декоративная керамика(Фаянс, полуфарфор, майолика) / " onchange="change28()">Столовая и чайная посуда, художественно-декоративные изделия.</label>
+                    <p><label><input type="radio" name="q1" id="inp_29" value="Огнеупорная керамика(Алюмосиликатная, кремнеземистая, магнезиальная, хромистая) / " onchange="change29()">Кирпичи и блоки, применяемые при сооружении печей, топок.</label>
+                    </p>
+                </form>
 
-<div id="rezultat"></div>
+                <form action="result.php" method="POST">
+                    <p><b>Если вы выбрали класс полностью спекшихся, блестящих в изломе изделий с водопоглощением не выше 0,5%. Выбирите описание артефакта.</b><br>
+                    <p><label for="inp_3"><input type="radio" name="q1" id="inp_30" value="Техническая керамика / " onchange="change30()" >Изоляторы, чехлы для термопар, вакуумплотные колбы.</label>
+                    <p><label><input type="radio" name="q1" id="inp_31" value="Кислотоупорная(«Каменная», кислотоупорный фарфор) / " onchange="change31()">Сосуды для хранения кислот и щелочей.</label>
+                    <p><label><input type="radio" name="q1" id="inp_32" value="Бытовая и художественно-декоративная керамика(Твердый и мягкий хозяйственный фарфор) / " onchange="change32()">Столовая и чайная посуда, статуэтки, вазы.</label>
+                    <p><label><input type="radio" name="q1" id="inp_33" value="Санитарно-строительные изделия(Низкотемператур­ный фарфор) / " onchange="change33()">Умывальные столы, унитазы.</label>
+                    </p>
+                </form>
 
-<a href="http://localhost:8090/main"><button type="button" class="btn btn-warning mr-5 btn-lg btn-block">На главную</button></a>
+                <button onclick="proverit(); " type="button" class="btn btn-primary">узнать результаты</button>
 
-{% endblock %}
+                <div id="rezultat"></div>
+            </section>
+        </div>
+    </main>
+
 {% endblock %}

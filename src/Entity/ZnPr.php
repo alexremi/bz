@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,6 +27,16 @@ class ZnPr
      * @ORM\ManyToOne(targetEntity="App\Entity\Prizn", inversedBy="znPrs")
      */
     private $pr;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Artefacts", mappedBy="zn_pr")
+     */
+    private $artefacts;
+
+    public function __construct()
+    {
+        $this->artefacts = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -57,5 +69,36 @@ class ZnPr
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * @return Collection|Artefacts[]
+     */
+    public function getArtefacts(): Collection
+    {
+        return $this->artefacts;
+    }
+
+    public function addArtefact(Artefacts $artefact): self
+    {
+        if (!$this->artefacts->contains($artefact)) {
+            $this->artefacts[] = $artefact;
+            $artefact->setZnPr($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArtefact(Artefacts $artefact): self
+    {
+        if ($this->artefacts->contains($artefact)) {
+            $this->artefacts->removeElement($artefact);
+            // set the owning side to null (unless already changed)
+            if ($artefact->getZnPr() === $this) {
+                $artefact->setZnPr(null);
+            }
+        }
+
+        return $this;
     }
 }
