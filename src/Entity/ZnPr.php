@@ -56,7 +56,7 @@ class ZnPr
     }
     public function __toString()
     {
-        return (string) $this->pr();
+        return (string) $this->pr;
     }
 
     /**
