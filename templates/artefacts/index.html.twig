@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}Manage Account!{% endblock %}
+{% block title %}Мой акаунт!{% endblock %}
 {% block body %}
     {{ include('header.html.twig') }}
 
@@ -17,19 +17,25 @@
                 </ul>
             </aside>
             <section class="col-md-9 col-lg-10 p-3" role="main">
-                <a href="{{ path('artefacts_new') }}" class="btn btn-success">Create new</a>
+                <a href="{{ path('artefacts_new') }}" class="btn btn-success mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                                                   width="24" height="24"
+                                                                                   viewBox="0 0 172 172"
+                         style=" fill:#000000;" class="mr-1"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M85.83203,17.04323c-6.32845,0.09274 -11.38527,5.2949 -11.2987,11.62344v45.86667h-45.86667c-4.13529,-0.05848 -7.98173,2.11417 -10.06645,5.68601c-2.08471,3.57184 -2.08471,7.98948 0,11.56132c2.08471,3.57184 5.93115,5.74449 10.06645,5.68601h45.86667v45.86667c-0.05848,4.13529 2.11417,7.98173 5.68601,10.06645c3.57184,2.08471 7.98948,2.08471 11.56132,0c3.57184,-2.08471 5.74449,-5.93115 5.68601,-10.06645v-45.86667h45.86667c4.13529,0.05848 7.98173,-2.11417 10.06645,-5.68601c2.08471,-3.57184 2.08471,-7.98948 0,-11.56132c-2.08471,-3.57184 -5.93115,-5.74449 -10.06645,-5.68601h-45.86667v-45.86667c0.04237,-3.09747 -1.17017,-6.08033 -3.36168,-8.26973c-2.1915,-2.18939 -5.17553,-3.39907 -8.27296,-3.35371z"></path></g></g></svg>
+                    Добавить новый
+                </a>
                 <table class="table bg-white">
                     <thead>
                     <tr>
                         <th width="20">Id</th>
-                        <th>Name</th>
-                        <th>Date</th>
-                        <th>Place</th>
-                        <th>Period</th>
+                        <th>Название артефакта</th>
+                        <th>Дата обнаружения</th>
+                        <th>Место проведения раскопаа</th>
+                        <th>Эпоха</th>
                         {% if is_granted('ROLE_ADMIN') %}
-                            <th>user</th>
+                            <th>Кем обнаружен</th>
                         {% endif %}
-                        <th>actions</th>
+                        <th>Действия</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -45,8 +51,18 @@
                             {% endif %}
                             <td>
                                 <div class="btn-group" role="group" >
-                                    <a href="{{ path('artefacts_show', {'id': artefact.id}) }}" class="btn btn-info">show</a>
-                                    <a href="{{ path('artefacts_edit', {'id': artefact.id}) }}" class="btn btn-warning">edit</a>
+                                    <a href="{{ path('artefacts_show', {'id': artefact.id}) }}" class="btn btn-info">
+                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                             width="24" height="24"
+                                             viewBox="0 0 172 172"
+                                             style="fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M86,28.66667c-57.33333,0 -78.83333,57.33333 -78.83333,57.33333c0,0 21.5,57.33333 78.83333,57.33333c57.33333,0 78.83333,-57.33333 78.83333,-57.33333c0,0 -21.5,-57.33333 -78.83333,-57.33333zM86,50.16667c19.78717,0 35.83333,16.04617 35.83333,35.83333c0,19.78717 -16.04617,35.83333 -35.83333,35.83333c-19.78717,0 -35.83333,-16.04617 -35.83333,-35.83333c0,-19.78717 16.04617,-35.83333 35.83333,-35.83333zM86,64.5c-11.87412,0 -21.5,9.62588 -21.5,21.5c0,11.87412 9.62588,21.5 21.5,21.5c11.87412,0 21.5,-9.62588 21.5,-21.5c0,-11.87412 -9.62588,-21.5 -21.5,-21.5z"></path></g></g></svg>
+                                    </a>
+                                    <a href="{{ path('artefacts_edit', {'id': artefact.id}) }}" class="btn btn-warning">
+                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                             width="24" height="24"
+                                             viewBox="0 0 24 24"
+                                             style=" fill:#000000;">    <path d="M 16.9375 1.0625 L 3.875 14.125 L 1.0742188 22.925781 L 9.875 20.125 L 22.9375 7.0625 C 22.9375 7.0625 22.8375 4.9615 20.9375 3.0625 C 19.0375 1.1625 16.9375 1.0625 16.9375 1.0625 z M 17.3125 2.6875 C 18.3845 2.8915 19.237984 3.3456094 19.896484 4.0214844 C 20.554984 4.6973594 21.0185 5.595 21.3125 6.6875 L 19.5 8.5 L 15.5 4.5 L 16.9375 3.0625 L 17.3125 2.6875 z M 4.9785156 15.126953 C 4.990338 15.129931 6.1809555 15.430955 7.375 16.625 C 8.675 17.825 8.875 18.925781 8.875 18.925781 L 8.9179688 18.976562 L 5.3691406 20.119141 L 3.8730469 18.623047 L 4.9785156 15.126953 z"></path></svg>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
