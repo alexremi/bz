@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f835a59-d05c-4e9f-babb-4748a32edd62" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version0002_CreateEntity_Corolla.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Corolla-recognizer/image_to_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Corolla-recognizer/image_to_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Corolla-recognizer/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Corolla-recognizer/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/artefacts/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/artefacts/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +37,22 @@
     <expand />
     <select />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" xdebug_debug_port="9001" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="bz.loc" id="26ae282c-ee79-456d-8988-92be3166a798" name="bz.loc" />
+    </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -156,7 +176,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1YbOajPlzPvPWX4IhYTkv4ssJxG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -166,11 +188,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Corolla-recognizer/images_check/0" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css/corolla" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Corolla-recognizer/images_check/0" />
       <recent name="$PROJECT_DIR$/src/Form" />
     </key>
   </component>
@@ -214,17 +241,109 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="544" y="264" width="568" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593184981258">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="544" y="264" width="568" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1533.873@67.27.1533.873" timestamp="1593184981258" />
+    <state x="608" y="181" width="441" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1593161497048">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="608" y="181" width="441" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1533.873@67.27.1533.873" timestamp="1593161497048" />
     <state x="67" y="27" width="1523" height="873" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593111044862">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="67" y="27" width="1523" height="873" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.27.1533.873@67.27.1533.873" timestamp="1593111044862" />
-    <state x="738" y="296" width="501" height="513" key="FileChooserDialogImpl" timestamp="1588832608327">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="566" y="220" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1593191533110">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
+    <state x="566" y="220" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1533.873@67.27.1533.873" timestamp="1593191533110" />
+    <state x="567" y="377" key="ComposerInitDialogKey" timestamp="1593189949252">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="567" y="377" key="ComposerInitDialogKey/67.27.1533.873@67.27.1533.873" timestamp="1593189949252" />
+    <state x="622" y="250" width="501" height="513" key="FileChooserDialogImpl" timestamp="1593150464382">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="622" y="250" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1593150464382" />
     <state x="738" y="296" width="501" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1588832608327" />
+    <state width="1487" height="254" key="GridCell.Tab.0.bottom" timestamp="1593192426928">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1593192426928" />
+    <state width="1487" height="254" key="GridCell.Tab.0.center" timestamp="1593192426925">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1593192426925" />
+    <state width="1487" height="254" key="GridCell.Tab.0.left" timestamp="1593192426923">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1593192426923" />
+    <state width="1487" height="254" key="GridCell.Tab.0.right" timestamp="1593192426925">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1593192426925" />
+    <state width="1487" height="254" key="GridCell.Tab.1.bottom" timestamp="1593192426931">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.1.bottom/67.27.1533.873@67.27.1533.873" timestamp="1593192426931" />
+    <state width="1487" height="254" key="GridCell.Tab.1.center" timestamp="1593192426929">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.1.center/67.27.1533.873@67.27.1533.873" timestamp="1593192426929" />
+    <state width="1487" height="254" key="GridCell.Tab.1.left" timestamp="1593192426929">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.1.left/67.27.1533.873@67.27.1533.873" timestamp="1593192426929" />
+    <state width="1487" height="254" key="GridCell.Tab.1.right" timestamp="1593192426930">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.1.right/67.27.1533.873@67.27.1533.873" timestamp="1593192426930" />
+    <state width="1487" height="254" key="GridCell.Tab.2.bottom" timestamp="1593192426934">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.2.bottom/67.27.1533.873@67.27.1533.873" timestamp="1593192426934" />
+    <state width="1487" height="254" key="GridCell.Tab.2.center" timestamp="1593192426934">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.2.center/67.27.1533.873@67.27.1533.873" timestamp="1593192426934" />
+    <state width="1487" height="254" key="GridCell.Tab.2.left" timestamp="1593192426933">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.2.left/67.27.1533.873@67.27.1533.873" timestamp="1593192426933" />
+    <state width="1487" height="254" key="GridCell.Tab.2.right" timestamp="1593192426934">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="254" key="GridCell.Tab.2.right/67.27.1533.873@67.27.1533.873" timestamp="1593192426934" />
+    <state x="596" y="182" width="489" height="561" key="NewPhpClassDialog" timestamp="1593184187504">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="596" y="182" width="489" height="561" key="NewPhpClassDialog/67.27.1533.873@67.27.1533.873" timestamp="1593184187504" />
+    <state x="322" y="97" key="SettingsEditor" timestamp="1593153867422">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="322" y="97" key="SettingsEditor/67.27.1533.873@67.27.1533.873" timestamp="1593153867422" />
+    <state width="766" height="437" key="XDebugger.FullValuePopup" timestamp="1593160189168">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="766" height="437" key="XDebugger.FullValuePopup/67.27.1533.873@67.27.1533.873" timestamp="1593160189168" />
     <state x="179" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1588832595987">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="179" y="381" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1588832595987" />
+    <state x="558" y="376" width="540" height="172" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1593153729259">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="558" y="376" width="540" height="172" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1533.873@67.27.1533.873" timestamp="1593153729259" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/CorollaController.php</url>
+          <line>71</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
