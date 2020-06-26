@@ -33,10 +33,16 @@ class Prizn
      */
     private $klPrs;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\PriznaArea", mappedBy="priznId")
+     */
+    private $priznaAreas;
+
     public function __construct()
     {
         $this->znPrs = new ArrayCollection();
         $this->klPrs = new ArrayCollection();
+        $this->priznaAreas = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -116,6 +122,37 @@ class Prizn
             // set the owning side to null (unless already changed)
             if ($klPr->getPr() === $this) {
                 $klPr->setPr(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|PriznaArea[]
+     */
+    public function getPriznaAreas(): Collection
+    {
+        return $this->priznaAreas;
+    }
+
+    public function addPriznaArea(PriznaArea $priznaArea): self
+    {
+        if (!$this->priznaAreas->contains($priznaArea)) {
+            $this->priznaAreas[] = $priznaArea;
+            $priznaArea->setPriznId($this);
+        }
+
+        return $this;
+    }
+
+    public function removePriznaArea(PriznaArea $priznaArea): self
+    {
+        if ($this->priznaAreas->contains($priznaArea)) {
+            $this->priznaAreas->removeElement($priznaArea);
+            // set the owning side to null (unless already changed)
+            if ($priznaArea->getPriznId() === $this) {
+                $priznaArea->setPriznId(null);
             }
         }
 

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PriznaArea index{% endblock %}
+
+{% block body %}
+    <h1>PriznaArea index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Zn</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for prizna_area in prizna_areas %}
+            <tr>
+                <td>{{ prizna_area.id }}</td>
+                <td>{{ prizna_area.Zn }}</td>
+                <td>
+                    <a href="{{ path('prizna_area_show', {'id': prizna_area.id}) }}">show</a>
+                    <a href="{{ path('prizna_area_edit', {'id': prizna_area.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('prizna_area_new') }}">Create new</a>
+{% endblock %}

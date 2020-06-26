@@ -18,7 +18,7 @@
         {% for zn_pr in zn_prs %}
             <tr>
                 <td>{{ zn_pr.id }}</td>
-                <td>{{ zn_pr.name }}</td>
+                <td>{{ zn_pr.priznaArea }}</td>
                 <td>{{ zn_pr.pr }}</td>
                 <td>
                     <a href="{{ path('zn_pr_show', {'id': zn_pr.id}) }}">show</a>

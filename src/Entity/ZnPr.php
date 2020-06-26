@@ -19,11 +19,6 @@ class ZnPr
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Prizn", inversedBy="znPrs")
      */
     private $pr;
@@ -33,6 +28,11 @@ class ZnPr
      */
     private $artefacts;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\PriznaArea", inversedBy="znId")
+     */
+    private $priznaArea;
+
     public function __construct()
     {
         $this->artefacts = new ArrayCollection();
@@ -41,18 +41,6 @@ class ZnPr
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
     }
 
     public function getPr(): ?Prizn
@@ -68,7 +56,7 @@ class ZnPr
     }
     public function __toString()
     {
-        return $this->getName();
+        return (string) $this->pr();
     }
 
     /**
@@ -98,6 +86,18 @@ class ZnPr
                 $artefact->setZnPr(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPriznaArea(): ?PriznaArea
+    {
+        return $this->priznaArea;
+    }
+
+    public function setPriznaArea(?PriznaArea $priznaArea): self
+    {
+        $this->priznaArea = $priznaArea;
 
         return $this;
     }
