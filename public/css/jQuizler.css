@@ -70,3 +70,8 @@
     .progress {
         display: none;
     }
+
+    #image_elvira {
+        max-width: 70%;
+        height: auto;
+    }
