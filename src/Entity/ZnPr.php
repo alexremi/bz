@@ -33,6 +33,14 @@ class ZnPr
      */
     private $priznaArea;
 
+    /**
+     * @var Klas
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Klas")
+     * @ORM\JoinColumn(name="class", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     */
+    private $class;
+
     public function __construct()
     {
         $this->artefacts = new ArrayCollection();
@@ -100,5 +108,25 @@ class ZnPr
         $this->priznaArea = $priznaArea;
 
         return $this;
+    }
+
+    /**
+     * @param Klas $class
+     *
+     * @return ZnPr
+     */
+    public function setClass(Klas $class)
+    {
+        $this->class = $class;
+
+        return $this;
+    }
+
+    /**
+     * @return Klas
+     */
+    public function getClass()
+    {
+        return $this->class;
     }
 }

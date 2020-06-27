@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>Значение</th>
                 <th>Признак</th>
+                <th>Класс</th>
                 <th>Действия</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
                 <td>{{ zn_pr.id }}</td>
                 <td>{{ zn_pr.priznaArea }}</td>
                 <td>{{ zn_pr.pr }}</td>
+                <td>{{ zn_pr.class }}</td>
                 <td>
                     <a href="{{ path('zn_pr_show', {'id': zn_pr.id}) }}">Просмотр</a>
                     <a href="{{ path('zn_pr_edit', {'id': zn_pr.id}) }}">Изменить</a>
