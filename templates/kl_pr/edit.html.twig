@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Изменение признака для класса</h1>
 
-    {{ include('kl_pr/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('kl_pr/_form.html.twig', {'button_label': 'Изменить'}) }}
 
-    <a href="{{ path('kl_pr_index') }}">back to list</a>
+    <a href="{{ path('kl_pr_index') }}">Назад к списку</a>
 
     {{ include('kl_pr/_delete_form.html.twig') }}
 {% endblock %}

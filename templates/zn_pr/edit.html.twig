@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Изменение значения признака</h1>
 
-    {{ include('zn_pr/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('zn_pr/_form.html.twig', {'button_label': 'Изменить'}) }}
 
-    <a href="{{ path('zn_pr_index') }}">back to list</a>
+    <a href="{{ path('zn_pr_index') }}">Назад к списку</a>
 
     {{ include('zn_pr/_delete_form.html.twig') }}
 {% endblock %}

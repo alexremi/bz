@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}PriznaArea{% endblock %}
+{% block title %}Значение для признака{% endblock %}
 
 {% block body %}
-    <h1>PriznaArea</h1>
+    <h1>Значение ля признака</h1>
 
     <table class="table">
         <tbody>
@@ -12,15 +12,15 @@
                 <td>{{ prizna_area.id }}</td>
             </tr>
             <tr>
-                <th>Zn</th>
+                <th>Значение</th>
                 <td>{{ prizna_area.Zn }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('prizna_area_index') }}">back to list</a>
+    <a href="{{ path('prizna_area_index') }}">Назад к списку</a>
 
-    <a href="{{ path('prizna_area_edit', {'id': prizna_area.id}) }}">edit</a>
+    <a href="{{ path('prizna_area_edit', {'id': prizna_area.id}) }}">Изменить</a>
 
     {{ include('prizna_area/_delete_form.html.twig') }}
 {% endblock %}

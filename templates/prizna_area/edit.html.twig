@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit PriznaArea{% endblock %}
+{% block title %}Изменение значения{% endblock %}
 
 {% block body %}
-    <h1>Edit PriznaArea</h1>
+    <h1>Изменение значения</h1>
 
-    {{ include('prizna_area/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('prizna_area/_form.html.twig', {'button_label': 'Изменить'}) }}
 
-    <a href="{{ path('prizna_area_index') }}">back to list</a>
+    <a href="{{ path('prizna_area_index') }}">Назад к списку</a>
 
     {{ include('prizna_area/_delete_form.html.twig') }}
 {% endblock %}

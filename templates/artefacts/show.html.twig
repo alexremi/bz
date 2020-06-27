@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Artefacts{% endblock %}
+{% block title %}Артефакты{% endblock %}
 
 {% block body %}
-    <h1>Artefacts</h1>
+    <h1>Артефакты</h1>
 
     <table class="table">
         <tbody>
@@ -12,27 +12,27 @@
                 <td>{{ artefact.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Название</th>
                 <td>{{ artefact.name }}</td>
             </tr>
             <tr>
-                <th>Date</th>
+                <th>Дата</th>
                 <td>{{ artefact.date ? artefact.date|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>Place</th>
+                <th>Место</th>
                 <td>{{ artefact.place }}</td>
             </tr>
             <tr>
-                <th>Period</th>
+                <th>Период</th>
                 <td>{{ artefact.period }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('artefacts_index') }}">back to list</a>
+    <a href="{{ path('artefacts_index') }}">Назад к списку</a>
 
-    <a href="{{ path('artefacts_edit', {'id': artefact.id}) }}">edit</a>
+    <a href="{{ path('artefacts_edit', {'id': artefact.id}) }}">Изменить</a>
 
     {{ include('artefacts/_delete_form.html.twig') }}
 {% endblock %}

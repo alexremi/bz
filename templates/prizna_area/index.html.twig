@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}PriznaArea index{% endblock %}
+{% block title %}Область значений для признаков{% endblock %}
 
 {% block body %}
-    <h1>PriznaArea index</h1>
+    <h1>Область значений для признаков</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Zn</th>
-                <th>actions</th>
+                <th>Значение</th>
+                <th>Действия</th>
             </tr>
         </thead>
         <tbody>
@@ -19,17 +19,17 @@
                 <td>{{ prizna_area.id }}</td>
                 <td>{{ prizna_area.Zn }}</td>
                 <td>
-                    <a href="{{ path('prizna_area_show', {'id': prizna_area.id}) }}">show</a>
-                    <a href="{{ path('prizna_area_edit', {'id': prizna_area.id}) }}">edit</a>
+                    <a href="{{ path('prizna_area_show', {'id': prizna_area.id}) }}">Просмотр</a>
+                    <a href="{{ path('prizna_area_edit', {'id': prizna_area.id}) }}">Изменить</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Нет записей</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('prizna_area_new') }}">Create new</a>
+    <a href="{{ path('prizna_area_new') }}">Новая запись</a>
 {% endblock %}

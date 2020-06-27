@@ -9,8 +9,8 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
+                <th>Название</th>
+                <th>Действия</th>
             </tr>
         </thead>
         <tbody>
@@ -19,17 +19,17 @@
                 <td>{{ kla.id }}</td>
                 <td>{{ kla.name }}</td>
                 <td>
-                    <a href="{{ path('klas_show', {'id': kla.id}) }}">show</a>
-                    <a href="{{ path('klas_edit', {'id': kla.id}) }}">edit</a>
+                    <a href="{{ path('klas_show', {'id': kla.id}) }}">Просмотр</a>
+                    <a href="{{ path('klas_edit', {'id': kla.id}) }}">Изменить</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Нет записей</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('klas_new') }}">Create new</a>
+    <a href="{{ path('klas_new') }}">Новая запись</a>
 {% endblock %}
