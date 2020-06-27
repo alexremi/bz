@@ -37,7 +37,7 @@ c-inst:
 	composer install
 
 admin:
-	$(CONSOLE) fos:user:create --super-admin
+	$(CONSOLE) admin
 
 default-admin:
 	$(CONSOLE) fos:user:create admin admin@admin.com admin --super-admin
