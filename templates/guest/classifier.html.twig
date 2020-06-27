@@ -1,0 +1,41 @@
+﻿{% extends 'base.html.twig' %}
+{% block title %}Классификатор артефактов{% endblock %}
+{% block body %}
+  {{ include('header.html.twig') }}
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/jQuizler.css') }}" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400">
+  <link type="text/css" rel="stylesheet" href="https://translate.googleapis.com/translate_static/css/translateelement.css">
+
+  <main class="container-fluid">
+    <div class="row">
+      <aside class="col-md-3 col-lg-2 bg-white pt-3">
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('artefacts_index') }}">Мои артефакты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ path('guest1') }}">Классифицировать артефакт</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('corolla') }}">Классифицировать профиль венчика</a>
+          </li>
+        </ul>
+      </aside>
+      <section class="col-md-9 col-lg-10 p-3" role="main">
+        <div id="jQuizler" class="main-quiz-holder">
+        <h3>Классификация артефакта</h3>
+		    <p>
+          <img id="image_elvira" src="{{ asset('images/cl.jpg') }}" alt=""/>
+        </p>
+        <button class="btn btn-large">Классифицировать артефакт</button>
+        </div>
+      </section>
+    </div>
+  </main>
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/elvira_classifier.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/elvira_classifier2.js') }}"></script>
+{% endblock %}

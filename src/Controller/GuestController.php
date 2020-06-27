@@ -13,9 +13,7 @@ class GuestController extends AbstractController
      */
     public function index()
     {
-        return $this->render('guest/index.html.twig', [
-            'controller_name' => 'GuestController',
-        ]);
+        return $this->render('guest/classifier.html.twig');
     }
 
     /**
