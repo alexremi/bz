@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block title %}Венчики{% endblock %}
+{% block body %}
+  {{ include('header.html.twig') }}
+  <main class="container-fluid">
+    <div class="row">
+      <aside class="col-md-3 col-lg-2 bg-white pt-3">
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('artefacts_index') }}">Мои артефакты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('guest1') }}">Классифицировать артефакт</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('corolla') }}">Классифицировать профиль венчика</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ path('corolla_list') }}">Венчики</a>
+          </li>
+        </ul>
+      </aside>
+      <section class="col-md-9 col-lg-10 p-3" role="main">
+        <table class="table bg-white">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Класс</th>
+            <th>Фотография</th>
+            <th>Действия</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for corolla in corollas %}
+            <tr id="corolla_{{ corolla.id }}">
+              <td>{{ corolla.id }}</td>
+              <td>{{ corolla.corollaClass }}</td>
+              <td>
+                <img style="height: 30%;" src="{{ asset('uploads/corolla/' ~ corolla.image) }}" alt="">
+              </td>
+              <td>
+                <div>
+                  <input type="image" onclick="corollaDelete({{ corolla.id }})" style="height: 30px;" src="{{ asset('images/delete.png') }}" alt="">
+                </div>
+              </td>
+            </tr>
+          {% else %}
+            <tr>
+              <td colspan="6">No records found</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+{% endblock %}
+{% block javascripts %}
+  <script type="text/javascript" rel="script" src="{{ asset('js/delete_corolla.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+{% endblock %}

@@ -1,26 +1,19 @@
 <?php
 
-
 namespace App\Controller;
 
-use App\Command\ClassifyCorollaCommand;
 use App\Entity\Corolla;
 use App\Entity\Klas;
 use Exception;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Output\BufferedOutput;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Routing\Annotation\Route;
@@ -43,6 +36,64 @@ class CorollaController extends AbstractController
     }
 
     /**
+     * @Route("/list", name="corolla_list", methods={"GET"})
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function listAction(Request $request)
+    {
+        $corollas = $this->getDoctrine()->getRepository(Corolla::class)->findAll();
+
+        return $this->render('corolla/list.html.twig', [
+            'corollas' => $corollas,
+        ]);
+    }
+
+    /**
+     * @Route("/delete/{id}", name="corolla_delete", methods={"POST"}, requirements={"id"="\d+"})
+     *
+     * @param Request         $request
+     * @param LoggerInterface $logger
+     * @param int             $id
+     *
+     * @throws Exception
+     *
+     * @return Response
+     */
+    public function deleteAction(Request $request, LoggerInterface $logger, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        /** @var Corolla $corolla */
+        $corolla = $em->getRepository(Corolla::class)->find($id);
+        if (!$corolla) {
+            $message = "Unable to find corolla with id: {$id}";
+            $logger->critical($message);
+
+            throw new NotFoundHttpException($message);
+        }
+
+        $filesystem        = new Filesystem();
+        $corollaUploadsDir = $this->getParameter('corolla_uploads');
+        $imagePath         = $corollaUploadsDir . $corolla->getImage();
+        $filesystem->remove($imagePath);
+
+        try {
+            $em->remove($corolla);
+            $em->flush();
+        } catch (Exception $e) {
+            $message = "Error occurred while removing corolla: {$e->getMessage()}";
+            $logger->critical($message);
+
+            throw $e;
+        }
+
+        return new JsonResponse();
+    }
+
+    /**
      * @Route("/classifier", name="corolla_classifier", methods={"POST"})
      *
      * @param Request         $request
@@ -60,7 +111,7 @@ class CorollaController extends AbstractController
             throw new BadRequestHttpException();
         }
 
-        $uploadsDir           = $this->getParameter('uploads');
+        $corollaUploadsDir    = $this->getParameter('corolla_uploads');
         $corollaRecognizerDir = $this->getParameter('corolla_recognizer_dir');
         $imagesCheck0Dir      = "{$corollaRecognizerDir}images_check/0/";
         $checkFile            = "{$corollaRecognizerDir}csv/check.csv";
@@ -83,11 +134,12 @@ class CorollaController extends AbstractController
 
         $checkbox = json_decode($request->request->get('checkbox'));
         if ($checkbox) {
-            $file->move($uploadsDir, "{$className}_{$fileName}"); // TODO: change
-            $filePath = "{$uploadsDir}{$className}_{$fileName}";
+
+            $fileNameWithClass = "{$className}_{$fileName}";
+            $this->moveFile($imagesCheck0Dir . $fileName, $corollaUploadsDir, $fileNameWithClass);
 
             $corolla = new Corolla();
-            $corolla->setImage($filePath);
+            $corolla->setImage($fileNameWithClass);
 
             $em    = $this->getDoctrine()->getManager();
             $class = $em->getRepository(Klas::class)->findOneBy(['name' => $className]);
@@ -107,7 +159,6 @@ class CorollaController extends AbstractController
 
                 throw new Exception($message);
             }
-
         } else {
             $filesystem->remove($imagesCheck0Dir . $fileName);
         }
@@ -145,5 +196,20 @@ class CorollaController extends AbstractController
         }
 
         return $mainProcess->getOutput();
+    }
+
+    /**
+     * @param string $filePath
+     * @param string $targetDirPath
+     * @param string $fileName
+     */
+    private function moveFile($filePath, $targetDirPath, $fileName)
+    {
+        $process = new Process(["mv", $filePath, $targetDirPath . $fileName]);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
     }
 }
