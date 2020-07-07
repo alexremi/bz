@@ -10,6 +10,11 @@
     margin-top: 20px;
     font-size: 1.5rem; /* 20 */
 }
+.class {
+    display: none;
+    margin-top: 20px;
+    font-size: 1.5rem; /* 20 */
+}
 .checkbox {
     width: 20px;
     height: 20px;

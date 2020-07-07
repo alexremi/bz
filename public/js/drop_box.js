@@ -1,7 +1,5 @@
 ;( function ( document, window, index )
 {
-    // var checkbox = document.getElementById('to_database_checkbox').value;
-
     // feature detection for drag&drop upload
     var isAdvancedUpload = function() {
         var div = document.createElement( 'div' );
@@ -98,6 +96,8 @@
                     // form.classList.add( data.success ? 'is-success' : 'is-error' );
                     if( !data.success ) errorMsg.textContent = data.error;
                     e.preventDefault();
+                    $('#class_name').html(JSON.parse(data.class));
+                    $('.class').css('display', 'block');
                 }
                 else alert( 'Загрузите файл!' );
             };
