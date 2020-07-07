@@ -16,6 +16,12 @@
                 <td>{{ artefact.name }}</td>
             </tr>
             <tr>
+                <th>Изображение</th>
+                <td>
+                    <img style="width: 20ex; height: auto; border-radius: 5px" src="{{ asset('uploads/artefact/' ~ artefact.image) }}" alt="">
+                </td>
+            </tr>
+            <tr>
                 <th>Дата</th>
                 <td>{{ artefact.date ? artefact.date|date('Y-m-d') : '' }}</td>
             </tr>

@@ -155,7 +155,7 @@ class CorollaController extends AbstractController
                 $em->flush();
             } catch (Exception $e) {
                 $message = "Couldn't save corolla: {$e->getMessage()}";
-                $logger->critical("Couldn't save corolla: {$message}");
+                $logger->critical($message);
 
                 throw new Exception($message);
             }

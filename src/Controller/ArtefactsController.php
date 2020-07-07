@@ -6,7 +6,10 @@ use App\Entity\Artefacts;
 use App\Form\ArtefactsType;
 use App\Form\ProfileUserType;
 use App\Repository\ArtefactsRepository;
+use Exception;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -66,24 +69,49 @@ class ArtefactsController extends AbstractController
 
     /**
      * @Route("/new", name="artefacts_new", methods={"GET","POST"})
+     *
+     * @param Request $request
+     * @param LoggerInterface $logger
+     *
+     * @throws Exception
+     *
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, LoggerInterface $logger)
     {
         $artefact = new Artefacts();
-        $form = $this->createForm(ArtefactsType::class, $artefact);
+        $form     = $this->createForm(ArtefactsType::class, $artefact);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($artefact);
-            $entityManager->flush();
+            $em = $this->getDoctrine()->getManager();
+
+            /** @var UploadedFile $image */
+            $image = $form->get('image')->getData();
+            if ($image) {
+                $imageName = "{$image->getFilename()}.{$image->guessExtension()}";
+                $imagesDir = $this->getParameter('artefact_uploads');
+                $image->move($imagesDir, $imageName);
+
+                $artefact->setImage($imageName);
+            }
+
+            try {
+                $em->persist($artefact);
+                $em->flush();
+            } catch (Exception $e) {
+                $message = "Couldn't save artefact: {$e->getMessage()}";
+                $logger->critical($message);
+
+                throw new Exception($message);
+            }
 
             return $this->redirectToRoute('artefacts_index');
         }
 
         return $this->render('artefacts/new.html.twig', [
             'artefact' => $artefact,
-            'form' => $form->createView(),
+            'form'     => $form->createView(),
         ]);
     }
 
@@ -99,14 +127,42 @@ class ArtefactsController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="artefacts_edit", methods={"GET","POST"})
+     *
+     * @param Request         $request
+     * @param Artefacts       $artefact
+     * @param LoggerInterface $logger
+     *
+     * @throws Exception
+     *
+     * @return Response
      */
-    public function edit(Request $request, Artefacts $artefact): Response
+    public function edit(Request $request, Artefacts $artefact, LoggerInterface $logger)
     {
         $form = $this->createForm(ArtefactsType::class, $artefact);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $em = $this->getDoctrine()->getManager();
+
+            /** @var UploadedFile $image */
+            $image = $form->get('image')->getData();
+            if ($image) {
+                $imageName = "{$image->getFilename()}.{$image->guessExtension()}";
+                $imagesDir = $this->getParameter('artefact_uploads');
+                $image->move($imagesDir, $imageName);
+
+                $artefact->setImage($imageName);
+            }
+
+            try {
+                $em->persist($artefact);
+                $em->flush();
+            } catch (Exception $e) {
+                $message = "Couldn't update artefact: {$e->getMessage()}";
+                $logger->critical($message);
+
+                throw new Exception($message);
+            }
 
             return $this->redirectToRoute('artefacts_index');
         }

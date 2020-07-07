@@ -32,10 +32,11 @@
                 <table class="table bg-white">
                     <thead>
                     <tr>
-                        <th width="20">Id</th>
+                        <th>Id</th>
                         <th>Название артефакта</th>
+                        <th>Изображение</th>
                         <th>Дата обнаружения</th>
-                        <th>Место проведения раскопаа</th>
+                        <th>Место проведения раскопок</th>
                         <th>Эпоха</th>
                         {% if is_granted('ROLE_ADMIN') %}
                             <th>Кем обнаружен</th>
@@ -48,6 +49,9 @@
                         <tr>
                             <td>{{ artefact.id }}</td>
                             <td>{{ artefact.name }}</td>
+                            <td>
+                                <img style="width: 20ex; height: auto; border-radius: 5px" src="{{ asset('uploads/artefact/' ~ artefact.image) }}" alt="">
+                            </td>
                             <td>{{ artefact.date ? artefact.date|date('Y-m-d') : '' }}</td>
                             <td>{{ artefact.place }}</td>
                             <td>{{ artefact.period }}</td>
@@ -73,7 +77,7 @@
                         </tr>
                     {% else %}
                         <tr>
-                            <td colspan="6">no records found</td>
+                            <td colspan="6">No records found</td>
                         </tr>
                     {% endfor %}
                     </tbody>

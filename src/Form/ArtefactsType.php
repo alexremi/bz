@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Artefacts;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -29,6 +30,10 @@ class ArtefactsType extends AbstractType
             ->add('klas')
             ->add('kl_pr')
             ->add('zn_pr')
+            ->add('image', FileType::class, [
+                'required' => false,
+                'mapped'   => false,
+            ])
         ;
 
         $user = $this->security->getUser();
@@ -48,7 +53,8 @@ class ArtefactsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Artefacts::class,
+            'data_class'         => Artefacts::class,
+            'allow_extra_fields' => true,
         ]);
     }
 }
