@@ -58,7 +58,7 @@ class ArtefactsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('artefacts');
+            return $this->redirectToRoute('artefacts_index');
         }
 
         return $this->render('artefacts/edit_profile.html.twig', [
