@@ -23,16 +23,31 @@ class ArtefactsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('date')
-            ->add('place')
-            ->add('period')
-            ->add('klas')
-            ->add('kl_pr')
-            ->add('zn_pr')
+            ->add('name', null, [
+                'label' => 'Название',
+            ])
+            ->add('date', null, [
+                'label' => 'Дата',
+            ])
+            ->add('place', null, [
+                'label' => 'Место',
+            ])
+            ->add('period', null, [
+                'label' => 'Период',
+            ])
+            ->add('klas', null, [
+                'label' => 'Класс',
+            ])
+            ->add('kl_pr', null, [
+                'label' => 'Признак класса',
+            ])
+            ->add('zn_pr', null, [
+                'label' => 'Значение признака',
+            ])
             ->add('image', FileType::class, [
                 'required' => false,
                 'mapped'   => false,
+                'label'    => 'Изображение'
             ])
         ;
 
@@ -43,7 +58,9 @@ class ArtefactsType extends AbstractType
             $form = $event->getForm();
 
             if (in_array('ROLE_ADMIN', $user->getRoles(), true)) {
-                $form->add('user');
+                $form->add('user', null, [
+                    'label' => 'Пользователь',
+                ]);
             } else {
                 $artefact->setUser($user);
             }
