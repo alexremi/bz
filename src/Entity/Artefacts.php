@@ -63,6 +63,13 @@ class Artefacts
      */
     private $period;
 
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="image", type="string", length=1024, nullable=true)
+     */
+    private $image;
+
     public function __toString()
     {
         return $this->name;
@@ -166,5 +173,25 @@ class Artefacts
         $this->period = $period;
 
         return $this;
+    }
+
+    /**
+     * @param string|null $image
+     *
+     * @return Artefacts
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

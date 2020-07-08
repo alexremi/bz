@@ -1,6 +1,8 @@
 parameters:
     locale:                 'en'
     uploads:                '%kernel.project_dir%/public/uploads/'
+    artefact_uploads:       '%kernel.project_dir%/public/uploads/artefact/'
+    corolla_uploads:        '%kernel.project_dir%/public/uploads/corolla/'
     corolla_recognizer_dir: '%kernel.project_dir%/src/Corolla-recognizer/'
 
 services:

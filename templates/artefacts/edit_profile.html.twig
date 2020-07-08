@@ -8,12 +8,17 @@
             <aside class="col-md-3 col-lg-2 bg-white pt-3">
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="/artefacts">Мои артефакты</a>
+                        <a class="nav-link" href="{{ path('artefacts_index') }}">Мои артефакты</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/guest">Классифицировать артефакт</a>
+                        <a class="nav-link" href="{{ path('guest1') }}">Классифицировать артефакт</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('corolla') }}">Классифицировать профиль венчика</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('corolla_list') }}">Венчики</a>
+                    </li>
                 </ul>
             </aside>
             <section class="col-md-9 col-lg-10 p-3" role="main">

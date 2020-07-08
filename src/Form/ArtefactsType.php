@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Artefacts;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -22,13 +23,32 @@ class ArtefactsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', null, array( 'label' => 'Название артефакта' ))
-            ->add('date', null, array( 'label' => 'Дата обнаружения' ))
-            ->add('place', null, array( 'label' => 'Место обнаружения' ))
-            ->add('period', null, array( 'label' => 'Эпоха артефакта' ))
-            ->add('klas', null, array( 'label' => 'Класс артефакта' ))
-            ->add('kl_pr', null, array( 'label' => 'Признаки артефакта' ))
-            ->add('zn_pr', null, array( 'label' => 'Значения признаков артефакта' ))
+            ->add('name', null, [
+                'label' => 'Название артефакта',
+            ])
+            ->add('date', null, [
+                'label' => 'Дата обнаружения',
+            ])
+            ->add('place', null, [
+                'label' => 'Место обнаружения',
+            ])
+            ->add('period', null, [
+                'label' => 'Эпоха артефакта',
+            ])
+            ->add('klas', null, [
+                'label' => 'Класс артефакта',
+            ])
+            ->add('kl_pr', null, [
+                'label' => 'Признаки артефакта',
+            ])
+            ->add('zn_pr', null, [
+                'label' => 'Значения признаков артефакта',
+            ])
+            ->add('image', FileType::class, [
+                'required' => false,
+                'mapped'   => false,
+                'label'    => 'Изображение'
+            ])
         ;
 
         $user = $this->security->getUser();
@@ -38,7 +58,9 @@ class ArtefactsType extends AbstractType
             $form = $event->getForm();
 
             if (in_array('ROLE_ADMIN', $user->getRoles(), true)) {
-                $form->add('user', null, array( 'label' => 'Кем найден' ));
+                $form->add('user', null, [
+                    'label' => 'Кем найден',
+                ]);
             } else {
                 $artefact->setUser($user);
             }
@@ -48,7 +70,8 @@ class ArtefactsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Artefacts::class,
+            'data_class'         => Artefacts::class,
+            'allow_extra_fields' => true,
         ]);
     }
 }

@@ -19,6 +19,9 @@
           <li class="nav-item">
             <a class="nav-link active" href="{{ path('corolla') }}">Классифицировать профиль венчика</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('corolla_list') }}">Венчики</a>
+          </li>
         </ul>
       </aside>
       <section class="col-md-9 col-lg-10 p-3" role="main">
@@ -82,6 +85,9 @@
         <div class="to_database">
           <label for="to_database_checkbox">Сохранить в базу данных: </label>
           <input class="checkbox" id="to_database_checkbox" type="checkbox" value="false" onclick="$(this).val(!!this.checked)">
+        </div>
+        <div class="class">
+          Класс: <span id="class_name"></span>
         </div>
       </section>
     </div>
