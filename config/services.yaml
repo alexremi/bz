@@ -22,3 +22,12 @@ services:
         class: Twig_Extensions_Extension_Text
         tags:
             - { name: twig.extension }
+
+    App\Mail\NotificationMailManager:
+        arguments:
+            $host:            '%env(MAILER_HOST)%'
+            $port:            '%env(MAILER_PORT)%'
+            $encryption:      '%env(MAILER_ENCRYPTION)%'
+            $defaultFromName: '%env(MAILER_DEFAULT_FROM_NAME)%'
+            $gmailUsername:   '%env(MAILER_GMAIL_USERNAME)%'
+            $gmailPassword:   '%env(MAILER_GMAIL_PASSWORD)%'
